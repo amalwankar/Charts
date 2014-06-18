@@ -7,11 +7,10 @@ $(function () {
                 type: 'area'
             },
             title: {
-                text: 'Burn down and project budget chart'
+                text: 'Burn down and project budget chart vs Sprint days'
             },
             xAxis: {
-                //type: 'datetime',
-            
+                type: 'linear'
             },
             yAxis: [{ // Primary yAxis
                 labels: {
@@ -54,33 +53,32 @@ $(function () {
                 backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
             },
             series: [{
-                name: 'Budget',
+                name: 'Tasks/Issues in the Scope',
                 type: 'area',
-                //pointInterval: 48* 3600 * 1000,
-                //pointStart: Date.UTC(2014, 5, 05),
                 yAxis: 1,
                 data: burndownData,
                 tooltip: {
-                    valueSuffix: ' CAD'
+                    valueSuffix: ' tasks'
                 }
     
             },{
-                name: 'Tasks/Issues in the Scope',
+                name: 'Budget',
                 type: 'area',
-                //pointInterval: 48* 3600 * 1000,
-                 //pointStart: Date.UTC(2014, 5, 05),
                 data: budgetData,
                 tooltip: {
-                    valueSuffix: ' tasks'
+                    valueSuffix: ' CAD'
                 }
             }
-                // ,{
-                // type: 'spline',
-                //   /* function returns data for trend-line */
-                //   pointInterval: 1* 3600 * 1000,
-                //   pointStart: Date.UTC(2014, 5, 05),
-                //   data: [burndownData[0], burndownData[length-1]]
-                // }
+            ,{
+                name: "Burndown Trend estimate",
+                type: 'line',
+                  data: [null, null, null, null, null, null, 59, 49, 33, 28, 19, 9, 0]
+                },
+                {
+                name: "Budget Trend estimate",
+                type: 'line',
+                  data: [null, null, null, null, null, null, 79, 83, 92, 101, 110, 118, 150]
+                }
             ]
         });
     });
