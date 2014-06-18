@@ -1,4 +1,7 @@
 $(function () {
+
+        var burndownData = [120, 115, 109, 94, 72,  70, 59, null, null, null, null, null]; //49, 33, 28, 19, 9];
+        var budgetData = [7, 15, 24, 32, 51, 62, 74, null, null, null, null, null]; //83, 92, 101, 110, 118],
         $('#container').highcharts({
             chart: {
                 type: 'area'
@@ -7,7 +10,7 @@ $(function () {
                 text: 'Burn down and project budget chart'
             },
             xAxis: {
-                type: 'datetime',
+                //type: 'datetime',
             
             },
             yAxis: [{ // Primary yAxis
@@ -53,23 +56,31 @@ $(function () {
             series: [{
                 name: 'Budget',
                 type: 'area',
-                pointInterval: 48* 3600 * 1000,
-                pointStart: Date.UTC(2014, 5, 05),
+                //pointInterval: 48* 3600 * 1000,
+                //pointStart: Date.UTC(2014, 5, 05),
                 yAxis: 1,
-                data: [120, 115, 109, 94, 72,  70, 59, null, null, null, null, null], //49, 33, 28, 19, 9]
+                data: burndownData,
                 tooltip: {
                     valueSuffix: ' CAD'
                 }
     
-            }, {
+            },{
                 name: 'Tasks/Issues in the Scope',
                 type: 'area',
-                pointInterval: 48* 3600 * 1000,
-                 pointStart: Date.UTC(2014, 5, 05),
-                data: [7, 15, 24, 32, 51, 62, 74, null, null, null, null, null], //83, 92, 101, 110, 118],
+                //pointInterval: 48* 3600 * 1000,
+                 //pointStart: Date.UTC(2014, 5, 05),
+                data: budgetData,
                 tooltip: {
                     valueSuffix: ' tasks'
                 }
-            }]
+            }
+                // ,{
+                // type: 'spline',
+                //   /* function returns data for trend-line */
+                //   pointInterval: 1* 3600 * 1000,
+                //   pointStart: Date.UTC(2014, 5, 05),
+                //   data: [burndownData[0], burndownData[length-1]]
+                // }
+            ]
         });
     });
