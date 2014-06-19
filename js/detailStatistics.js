@@ -1,7 +1,7 @@
 $(function () {
 
-        var burndownData = [120, 115, 109, 94, 72,  70, 59, null, null, null, null, null]; //49, 33, 28, 19, 9];
-        var budgetData = [7, 15, 24, 32, 51, 62, 74, null, null, null, null, null]; //83, 92, 101, 110, 118],
+        var burndownData = [120, 115, 109, 94, 72,  70, 59, null, null, null, null, null, null]; //49, 33, 28, 19, 9];
+        var budgetData = [7, 15, 24, 32, 51, 62, 74, null, null, null, null, null, null]; //83, 92, 101, 110, 118],
         $('#container').highcharts({
             chart: {
                 type: 'area'
@@ -53,7 +53,7 @@ $(function () {
                 backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
             },
             series: [{
-                name: 'Tasks/Issues in the Scope',
+                name: 'Tasks',
                 type: 'area',
                 yAxis: 1,
                 data: burndownData,
@@ -70,12 +70,12 @@ $(function () {
                 }
             }
             ,{
-                name: "Burndown Trend estimate",
+                name: "Burndown Trend",
                 type: 'line',
                   data: [null, null, null, null, null, null, 59, 49, 33, 28, 19, 9, 0]
                 },
                 {
-                name: "Budget Trend estimate",
+                name: "Budget Trend",
                 type: 'line',
                   data: [null, null, null, null, null, null, 79, 83, 92, 101, 110, 118, 150]
                 }
