@@ -28,7 +28,7 @@ $(function () {
 	    // the value axis
 	    yAxis: {
 			stops: [
-				[0.25, '#DDDF0D'], // yellow 
+				[0.25, '#DDDF0D'], // yellow  ['#DDDF0D', '#55BF3B', '#DF5353']
 	        	[0.5, '#55BF3B'], // green
 	        	[0.8, '#DF5353'] // red
 			],

@@ -52,6 +52,9 @@ $(function () {
                 floating: true,
                 backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
             },
+            credits: {
+                enabled: false
+            },
             series: [{
                 name: 'Tasks',
                 type: 'area',
@@ -59,12 +62,14 @@ $(function () {
                 data: burndownData,
                 tooltip: {
                     valueSuffix: ' tasks'
-                }
+                },
+                color: '#55BF3B'
     
             },{
                 name: 'Budget',
                 type: 'area',
                 data: budgetData,
+                color: "#DDDF0D", //yellow 
                 tooltip: {
                     valueSuffix: ' CAD'
                 }
@@ -72,12 +77,14 @@ $(function () {
             ,{
                 name: "Burndown Trend",
                 type: 'line',
-                  data: [null, null, null, null, null, null, 59, 49, 33, 28, 19, 9, 0]
+                  data: [null, null, null, null, null, null, 59, 49, 33, 28, 19, 9, 0],
+                  color: "#55BF3B", //green 
                 },
                 {
                 name: "Budget Trend",
                 type: 'line',
-                  data: [null, null, null, null, null, null, 79, 83, 92, 101, 110, 118, 150]
+                  data: [null, null, null, null, null, null, 79, 83, 92, 101, 110, 118, 150],
+                   color: "#DDDF0D", //yellow 
                 }
             ]
         });
