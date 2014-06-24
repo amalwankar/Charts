@@ -7,6 +7,7 @@ $(function () {
                 text: 'Summary KPI'
             },
             xAxis: {
+                 gridLineWidth: 0,
                 categories: ['Budget', 'Scope', 'Time'],
                 title: {
                     text: null
@@ -14,6 +15,7 @@ $(function () {
             },
             yAxis: {
                 min: 0,
+                gridLineWidth: 0,
                 title: {
                     text: 'Percentage of Total',
                     align: 'high'
@@ -25,21 +27,11 @@ $(function () {
             plotOptions: {
                 bar: {
                     dataLabels: {
-                        enabled: true
+                        enabled: true,
+                        format: '{y}%'
                     }
                 }
             },
-            // legend: {
-            //     layout: 'vertical',
-            //     align: 'right',
-            //     verticalAlign: 'top',
-            //     x: -5,
-            //     y: 50,
-            //     floating: true,
-            //     borderWidth: 1,
-            //     backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'),
-            //     shadow: true
-            // },
             legend: {
                 enabled: false
             },
@@ -52,8 +44,7 @@ $(function () {
                 "color": "#000000" //black
             }, {
                 name: 'Actual',
-                //data: [45, 64, 70],
-                                data : [
+                data : [
                     {
                       "y": 45,
 

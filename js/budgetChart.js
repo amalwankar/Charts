@@ -6,19 +6,17 @@ $(function () {
 
         $('#container').highcharts({
             title: {
-                text: 'Budget Chart',
-                //x: -20 //center
-            },
-            subtitle: {
-                text: 'Expected vs Actual',
-                //x: -20
+                text: 'Budget',
             },
             xAxis: {
-
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    labels: {
+                        rotation: -45,
+                    }
             },
             yAxis: {
+                gridLineWidth: 0.3,
                 title: {
                     text: 'Budget Amount'
                 },
@@ -32,7 +30,7 @@ $(function () {
                 valueSuffix: ' Tasks'
             },
             legend: {
-                layout: 'vertical',
+                layout: 'horizontal',
                 borderWidth: 0,
                 x: 0,
                 y: 0

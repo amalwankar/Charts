@@ -7,7 +7,7 @@ $(function () {
                 type: 'area'
             },
             title: {
-                text: 'Burn down and project budget chart vs Sprint days'
+                text: 'Burn down and Budget'
             },
             xAxis: {
                 type: 'linear'
@@ -20,7 +20,7 @@ $(function () {
                     }
                 },
                 title: {
-                    text: 'Number of Tasks/Issues in Scope',
+                    text: 'Tasksin Scope',
                     style: {
                         color: Highcharts.getOptions().colors[1]
                     }
@@ -29,13 +29,13 @@ $(function () {
                 title: {
                     text: 'Project Budget',
                     style: {
-                        color: Highcharts.getOptions().colors[0]
+                        color: Highcharts.getOptions().colors[1]
                     }
                 },
                 labels: {
                     format: '${value}k',
                     style: {
-                        color: Highcharts.getOptions().colors[0]
+                        color: Highcharts.getOptions().colors[1]
                     }
                 },
                 opposite: true
@@ -44,13 +44,10 @@ $(function () {
                 shared: true
             },
             legend: {
-                layout: 'vertical',
-                align: 'left',
-                x: 120,
-                verticalAlign: 'top',
-                y: 50   ,
-                floating: true,
-                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                layout: 'horizontal',
+                borderWidth: 0,
+                x: 0,
+                y: 0
             },
             credits: {
                 enabled: false

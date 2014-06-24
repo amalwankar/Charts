@@ -6,19 +6,21 @@ $(function () {
 
         $('#container').highcharts({
             title: {
-                text: 'Burn down Chart',
-                //x: -20 //center
-            },
-            subtitle: {
-                text: 'Expected vs Actual',
-                //x: -20
+                text: 'Burn down',
             },
             xAxis: {
-
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    labels: {
+                        rotation: -45,
+                        // style: {
+                        //     fontSize: '13px',
+                        //     fontFamily: 'Verdana, sans-serif'
+                        // }
+                    }
             },
             yAxis: {
+                gridLineWidth: 0.3,
                 title: {
                     text: 'Tasks'
                 },
@@ -32,7 +34,7 @@ $(function () {
                 valueSuffix: ' Tasks'
             },
             legend: {
-                layout: 'vertical',
+                layout: 'horizontal',
                 borderWidth: 0,
                 x: 0,
                 y: 0
@@ -41,7 +43,7 @@ $(function () {
                 enabled: false
             },
             series: [{
-                name: 'Actual Task Burndown',
+                name: 'Actual Burndown',
                 data: burndownData, 
                  type: 'area',
                 color: "#E18A07" //Orange
