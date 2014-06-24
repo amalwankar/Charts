@@ -48,7 +48,7 @@ $(function () {
                 data: (function() {
                        return fitData(budgetData).data;
             })(),
-                color: "brown" //grey 
+                color: "black" 
             }]
         });
     });

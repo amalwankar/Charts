@@ -13,6 +13,7 @@ $(function () {
                 type: 'linear'
             },
             yAxis: [{ // Primary yAxis
+                gridLineWidth: 0.1,
                 labels: {
                     format: '{value} tasks',
                     style: {
@@ -20,14 +21,15 @@ $(function () {
                     }
                 },
                 title: {
-                    text: 'Tasksin Scope',
+                    text: 'Tasks',
                     style: {
                         color: Highcharts.getOptions().colors[1]
                     }
                 }
             }, { // Secondary yAxis
+                gridLineWidth: 0.1,
                 title: {
-                    text: 'Project Budget',
+                    text: 'Budget',
                     style: {
                         color: Highcharts.getOptions().colors[1]
                     }
@@ -80,7 +82,7 @@ $(function () {
                 {
                 name: "Budget Trend",
                 type: 'line',
-                  data: [null, null, null, null, null, null, 79, 83, 92, 101, 110, 118, 150],
+                  data: [null, null, null, null, null, null, 74, 83, 92, 101, 110, 118, 150],
                    color: "#DDDF0D", //yellow 
                 }
             ]

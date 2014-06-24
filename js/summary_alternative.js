@@ -24,6 +24,9 @@ $(function () {
             tooltip: {
                 valueSuffix: ' percent'
             },
+            legend: {
+                enabled : false
+            },
             plotOptions: {
                 bar: {
                     dataLabels: {
@@ -32,33 +35,30 @@ $(function () {
                     }
                 }
             },
-            legend: {
-                enabled: false
-            },
             credits: {
                 enabled: false
             },
             series: [{
                 name: 'Expected',
                 data: [50, 60, 80],
-                "color": "#000000" //black
+                color: "#000000" //black
             }, {
                 name: 'Actual',
                 data : [
                     {
-                      "y": 45,
+                      y: 45,
 
-                      "color": "#55BF3B" //green
+                      color: "#55BF3B" //green
                     },
                     {
-                      "y": 64,
+                      y: 64,
 
-                      "color": "#DF5353" //red
+                      color: "#DF5353" //red
                     },
                     {
-                      "y": 70,
+                      y: 70,
 
-                      "color": "#DDDF0D" //yellow
+                      color: "#DDDF0D" //yellow
                     }
                     ]
             }]
