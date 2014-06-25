@@ -10,7 +10,7 @@ $(function () {
 	    
 	    pane: {
 	    	center: ['50%', '85%'],
-	    	size: '128%',
+	    	size: '125%',
 	        startAngle: -90,
 	        endAngle: 90,
             background: {
@@ -28,19 +28,21 @@ $(function () {
 	    // the value axis
 	    yAxis: {
 			stops: [
-				[0.25, '#DDDF0D'], // yellow  ['#DDDF0D', '#55BF3B', '#DF5353']
-	        	[0.5, '#55BF3B'], // green
-	        	[0.8, '#DF5353'] // red
+				[0.25, '#ec8b3a'], // yellow  DDDF0D // orange ec8b3a // ['#DDDF0D', '#55BF3B', '#DF5353']
+	        	[0.5, '#93bf52'], // green
+	        	[0.8, '#e34e33'] // red
 			],
 			lineWidth: 0,
             minorTickInterval: null,
             tickPixelInterval: 400,
             tickWidth: 0,
 	        title: {
-                y: -45
+                y: -58,
+                style : { "color": "#333333", "fontSize": "18px" }
+
 	        },
             labels: {
-                y: 14
+                y: 20
             }        
 	    },
         
@@ -73,9 +75,9 @@ $(function () {
 	        name: 'Scope',
 	        data: [100],
 	        dataLabels: {
-	        	format: '<div style="text-align:center"><span style="font-size:14px;color:' + 
+	        	format: '<div style="text-align:center"><span style="font-size:16px;color:' + 
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:8.75px;color:black">Complete issues</span></div>'
+                   	'<span style="font-size:10px;color:black">Complete issues</span></div>'
 	        },
 	        tooltip: {
 	            valueSuffix: 'Completed issues'
@@ -100,9 +102,9 @@ $(function () {
 	        name: 'Budget',
 	        data: [84000],
 	        dataLabels: {
-	        	format: '<div style="text-align:center"><span style="font-size:14px;color:' + 
+	        	format: '<div style="text-align:center"><span style="font-size:16px;color:' + 
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:8.75px;color:black">CAD</span></div>'
+                   	'<span style="font-size:10px;color:black">CAD</span></div>'
 	        },
 	        tooltip: {
 	            valueSuffix: '$'
@@ -128,9 +130,9 @@ $(function () {
 	        name: 'Time',
 	        data: [10],
 	        dataLabels: {
-	        	format: '<div style="text-align:center"><span style="font-size:14px;color:' + 
+	        	format: '<div style="text-align:center"><span style="font-size:16px;color:' + 
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:8.75px;color:black">Developer Days</span></div>'
+                   	'<span style="font-size:10px;color:black">Developer Days</span></div>'
 	        },
 	        tooltip: {
 	            valueSuffix: 'Developer Days'

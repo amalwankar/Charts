@@ -1,10 +1,15 @@
 $(function () {
 
-    var budgetData = [7000, 20000, 32000, 61000, 94000, 101000, 110000, 118000, 135876, 160000, 173000, 192000];
+    var budgetData = [7000, 20000, 32000, 61000, 94000, 101000, 110000]; // 118000, 135876, 160000, 173000, 192000];
+    var maxValue = 11;
 
+        function yZero(data){
+        var fitObj = fitData(data);
+         fitObj.slope*maxValue + fitObj.intercept;//Math.floor((0-fitObj.intercept)/fitObj.slope);
+         return[[data.length-1, data[data.length-1]], [maxValue, +(fitObj.slope*maxValue + fitObj.intercept).toFixed(2)]];
+     }
 
-
-        $('#container').highcharts({
+        $('#budget_container').highcharts({
             title: {
                 text: 'Budget',
             },
@@ -18,7 +23,7 @@ $(function () {
             yAxis: {
                 gridLineWidth: 0.3,
                 title: {
-                    text: 'Budget Amount'
+                    text: null
                 },
                 plotLines: [{
                     value: 0,
@@ -27,7 +32,7 @@ $(function () {
                 }]
             },
             tooltip: {
-                valueSuffix: ' Tasks'
+                valueSuffix: ' CAD'
             },
             legend: {
                 layout: 'horizontal',
@@ -39,15 +44,15 @@ $(function () {
                 enabled: false
             },
             series: [{
-                name: 'Actual Budget',
+                name: 'Actual',
                 data: budgetData, 
                  type: 'area',
-                color: "#55BF3B" //green
+                color: "#93bf52"//"#55BF3B" //green
             }, {
                 name: 'Expected',
-                data: (function() {
-                       return fitData(budgetData).data;
-            })(),
+                data: yZero(budgetData),
+                type: 'line',
+                dashStyle: 'dot',
                 color: "black" 
             }]
         });

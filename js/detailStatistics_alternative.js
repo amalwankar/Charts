@@ -1,12 +1,20 @@
 $(function () {
 
-     var burndownData = [120, 118, 110, 99, 88,  74, 66, 57, 49, 39, 26, 15];
+     var burndownData = [120, 118, 110, 99, 88,  74, 66]; //57, 49, 39, 26, 15];
+     var maxValue = 11
 
 
-
-        $('#container').highcharts({
+    function yZero(data){
+        var fitObj = fitData(data);
+         fitObj.slope*maxValue + fitObj.intercept;//Math.floor((0-fitObj.intercept)/fitObj.slope);
+         return[[data.length-1, data[data.length-1]], [maxValue, +(fitObj.slope*maxValue + fitObj.intercept).toFixed(2)]];
+     }
+        $('#burndown_container').highcharts({
             title: {
                 text: 'Burn down',
+            },
+            subtitle: {
+                text: 'Tasks'
             },
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -22,7 +30,7 @@ $(function () {
             yAxis: {
                 gridLineWidth: 0.3,
                 title: {
-                    text: 'Tasks'
+                    text: null
                 },
                 plotLines: [{
                     value: 0,
@@ -43,15 +51,15 @@ $(function () {
                 enabled: false
             },
             series: [{
-                name: 'Actual Burndown',
+                name: 'Actual',
                 data: burndownData, 
                  type: 'area',
-                color: "#E18A07" //Orange
+                color: '#ec8b3a'//"#E18A07" //Orange
             }, {
-                name: 'Expected Burndown',
-                data: (function() {
-                       return fitData(burndownData).data;
-            })(),
+                name: 'Expected',
+                data: yZero(burndownData),
+                type: 'line',
+                dashStyle: 'dot',
                 color: "#000000" //green 
             }]
         });

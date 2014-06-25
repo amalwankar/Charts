@@ -4,7 +4,10 @@ $(function () {
                 type: 'bar'
             },
             title: {
-                text: 'Summary KPI'
+                text: 'Summary KPI',
+                // style: {
+                //     color: '#389dd8'
+                // }
             },
             xAxis: {
                  gridLineWidth: 0,
@@ -48,17 +51,17 @@ $(function () {
                     {
                       y: 45,
 
-                      color: "#55BF3B" //green
+                      color: "#93bf52" //green
                     },
                     {
                       y: 64,
 
-                      color: "#DF5353" //red
+                      color: "#e34e33" //red
                     },
                     {
                       y: 70,
 
-                      color: "#DDDF0D" //yellow
+                      color: "#ec8b3a" //yellow
                     }
                     ]
             }]
