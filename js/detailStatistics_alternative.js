@@ -4,12 +4,14 @@ $(function () {
      var maxValue = 11
 
 
+
     function yZero(data){
         var fitObj = fitData(data);
          fitObj.slope*maxValue + fitObj.intercept;//Math.floor((0-fitObj.intercept)/fitObj.slope);
          return[[data.length-1, data[data.length-1]], [maxValue, +(fitObj.slope*maxValue + fitObj.intercept).toFixed(2)]];
      }
-        $('#burndown_container').highcharts({
+    
+     var chart = $('#burndown_container').highcharts({
             title: {
                 text: 'Burn down',
             },
@@ -42,10 +44,11 @@ $(function () {
                 valueSuffix: ' Tasks'
             },
             legend: {
-                layout: 'horizontal',
-                borderWidth: 0,
-                x: 0,
-                y: 0
+                // layout: 'horizontal',
+                // borderWidth: 0,
+                // x: 0,
+                // y: 0
+                enabled: false
             },
             credits: {
                 enabled: false
@@ -60,8 +63,24 @@ $(function () {
                 data: yZero(burndownData),
                 type: 'line',
                 dashStyle: 'dot',
-                color: "#000000" //green 
+                color: "grey"
             }]
         });
+
+        
+        var chart = $('#burndown_container').highcharts();
+                // the button action
+        $burndownButton = $('#burndown-button');
+        $burndownButton.click(function() {
+            var series = chart.series[1];
+            if (series.visible) {
+                series.hide();
+                $burndownButton.html('Show Projection');
+            } else {
+                series.show();
+                $burndownButton.html('Hide Projection');
+            }
+        });
+
     });
     

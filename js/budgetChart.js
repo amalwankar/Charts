@@ -35,10 +35,11 @@ $(function () {
                 valueSuffix: ' CAD'
             },
             legend: {
-                layout: 'horizontal',
-                borderWidth: 0,
-                x: 0,
-                y: 0
+                // layout: 'horizontal',
+                // borderWidth: 0,
+                // x: 0,
+                // y: 0
+                enabled: false
             },
             credits: {
                 enabled: false
@@ -53,8 +54,23 @@ $(function () {
                 data: yZero(budgetData),
                 type: 'line',
                 dashStyle: 'dot',
-                color: "black" 
+                color: "grey" 
             }]
         });
+
+        var chart = $('#budget_container').highcharts();
+                // the button action
+        $budgetButton = $('#budget-button');
+        $budgetButton.click(function() {
+            var series = chart.series[1];
+            if (series.visible) {
+                series.hide();
+                $budgetButton.html('Show Projection');
+            } else {
+                series.show();
+                $budgetButton.html('Hide Projection');
+            }
+        });
+
     });
     
