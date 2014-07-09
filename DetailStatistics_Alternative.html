@@ -9,18 +9,38 @@
         <script type="text/javascript" src="js/detailStatistics_alternative.js"></script>
         <script type="text/javascript" src="js/budgetChart.js"></script>
         <script type="text/javascript" src="js/regression.js"></script>
+        <style>
+            button {
+                width : 120px;
+                height: 33px;
+                border-radius: 3px;
+                border-style:solid;
+                border-width: 1px;
+                background-color: #5e5e5e;
+                color: white;
+                border-color: #5e5e5e;
+                font-family: "Helvetica Neue";
+                margin-left: 36%;
+                margin-top: 0px;
+            }
+        </style>
       
     </head>
     <body>
         <script type="text/javascript" src="js/highcharts.js"></script>
 
 
-        <div id="burndown_container" style="min-width: 300px; max-width: 800px; min-height: 200px; margin-top: 20px;"></div>
+        <div style="width=100%; max-width: 800px; height: 205px; margin-top: -15px;"   >
+            
+            <div id="burndown_container"></div>
         
-        <button style="margin-left: 70%; " id="burndown-button">Hide Projection</button>
+            <button id="burndown-button">Show Projection</button>
+        </div>
 
-        <div id="budget_container" style="min-width: 300px; max-width: 800px; min-height: 200px; margin-top: 20px;"></div>
+        <div style="min-width: 300px; max-width: 800px;  height: 205px; margin-top: 35px;">
+            <div id="budget_container"></div>
 
-        <button style="margin-left: 70%; " id="budget-button">Hide Projection</button>
+            <button id="budget-button">Show Projection</button>
+        </div>
     </body>
 </html>

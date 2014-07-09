@@ -10,34 +10,40 @@ $(function () {
             return[[data.length-1, data[data.length-1]], [maxValue, +(fitObj.slope*maxValue + fitObj.intercept).toFixed(2)]];
         }
 
-        $('#container').highcharts({
+        $('#detail-container').highcharts({
             // chart: {
             //     type: 'area'
             // },
             title: {
-                text: 'Burndown & Budget'
+                text: 'Burndown & Budget',
+                style: {
+                    color: '#5e5e5e',
+                    fontSize: "16px"
+                }
             },
             xAxis: {
                 type: 'linear',
                 title: {
-                    text: null
+                    text: "Week"
+                },
+                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                labels: {
+                    rotation: -45,
+                    style: {
+                        color: '#5e5e5e'
+                    }
+                    // style: {
+                    //     fontSize: '13px',
+                    //     fontFamily: 'Verdana, sans-serif'
+                    // }
                 }
-                // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                //     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                // labels: {
-                //     rotation: -45,
-                //     // style: {
-                //     //     fontSize: '13px',
-                //     //     fontFamily: 'Verdana, sans-serif'
-                //     // }
-                // }
             },
             yAxis: [{ // Primary yAxis
                 gridLineWidth: 0.1,
                 labels: {
                     format: '{value} tasks',
                     style: {
-                        color: Highcharts.getOptions().colors[1]
+                        color: '#5e5e5e'
                     }
                 },
                 // title: {
@@ -59,7 +65,7 @@ $(function () {
                 labels: {
                     format: '${value}k',
                     style: {
-                        color: Highcharts.getOptions().colors[1]
+                        color: '#5e5e5e'
                     }
                 },
                 opposite: true
@@ -68,10 +74,11 @@ $(function () {
                 shared: true
             },
             legend: {
-                layout: 'horizontal',
-                borderWidth: 0,
-                x: 0,
-                y: 0
+                // layout: 'horizontal',
+                // borderWidth: 0,
+                // x: 0,
+                // y: 0
+                enabled: false
             },
             credits: {
                 enabled: false
@@ -84,15 +91,16 @@ $(function () {
                 tooltip: {
                     valueSuffix: ' tasks'
                 },
-                color: '#55BF3B'
+                color:  "#55aded"//"#55BF3B" //green
     
             },{
                 name: 'Budget',
                 type: 'area',
                 data: budgetData,
-                color: '#ec8b3a',// Orange "#DDDF0D", //yellow 
+                color: "#93bf52", //"#55BF3B" //green
                 tooltip: {
-                    valueSuffix: ' CAD'
+                    valuePrefix: '$',
+                    valueSuffix: 'k'
                 }
             }
             ,{
@@ -100,6 +108,9 @@ $(function () {
                 type: 'line',
                  dashStyle: 'dot',
                  data: yZero(burndownData),
+                 tooltip: {
+                    valueSuffix: ' tasks'
+                },
                   color: 'grey' //#ec8b3a'// Orange "#DDDF0D", //yellow //color: "#55BF3B", //green 
             },
             {
@@ -107,7 +118,31 @@ $(function () {
                 type: 'line',
                 dashStyle: 'dot',
                 data: yZero(budgetData),
+                                tooltip: {
+                    valuePrefix: '$',
+                    valueSuffix: 'k'
+                },
                 color: 'grey' //#ec8b3a'// Orange "#DDDF0D", //yellow 
             }]
+        });
+
+var chart = $('#detail-container').highcharts();
+        chart.series[2].hide();
+        chart.series[3].hide();
+        chart.setSize(300, 320);
+                // the button action
+        $budgetButton = $('#detail-button');
+        $budgetButton.click(function() {
+            var series2 = chart.series[2];
+            var series3 = chart.series[3];            
+            if (series2.visible && series3.visible) {
+                series2.hide();
+                series3.hide();
+                $budgetButton.html('Show Projection');
+            } else {
+                series2.show();
+                series3.show();
+                $budgetButton.html('Hide Projection');
+            }
         });
     });

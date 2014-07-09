@@ -14,15 +14,24 @@ $(function () {
      var chart = $('#burndown_container').highcharts({
             title: {
                 text: 'Burn down',
+                style: {
+                    color: '#5e5e5e'
+                }
             },
             subtitle: {
-                text: 'Tasks'
+                text: 'Tasks',
+                style: {
+                    color: '#5e5e5e'
+                }
             },
             xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6',
+                    'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'],
                     labels: {
                         rotation: -45,
+                        style: {
+                            color: '#5e5e5e'
+                        }
                         // style: {
                         //     fontSize: '13px',
                         //     fontFamily: 'Verdana, sans-serif'
@@ -32,7 +41,10 @@ $(function () {
             yAxis: {
                 gridLineWidth: 0.3,
                 title: {
-                    text: null
+                    text: null,
+                    style: {
+                        color: '#5e5e5e'
+                    }
                 },
                 plotLines: [{
                     value: 0,
@@ -53,31 +65,39 @@ $(function () {
             credits: {
                 enabled: false
             },
+
             series: [{
                 name: 'Actual',
                 data: burndownData, 
                  type: 'area',
-                color: '#ec8b3a'//"#E18A07" //Orange
+                color: "#93bf52"//"#55BF3B" //green
             }, {
-                name: 'Expected',
+                name: 'Projected',
                 data: yZero(burndownData),
                 type: 'line',
                 dashStyle: 'dot',
-                color: "grey"
+                color: "grey",
+
             }]
         });
 
         
-        var chart = $('#burndown_container').highcharts();
+        var burndownchart = $('#burndown_container').highcharts();
+    
+        var burndownSeries = burndownchart.series[1];
+        burndownSeries.hide();
+        burndownSeries.show();
+        burndownSeries.hide();
+            burndownchart.setSize(300, 200);
                 // the button action
         $burndownButton = $('#burndown-button');
         $burndownButton.click(function() {
-            var series = chart.series[1];
-            if (series.visible) {
-                series.hide();
+
+            if (burndownSeries.visible) {
+                burndownSeries.hide();
                 $burndownButton.html('Show Projection');
             } else {
-                series.show();
+                burndownSeries.show();
                 $burndownButton.html('Hide Projection');
             }
         });

@@ -1,10 +1,29 @@
 <html>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<head>
-	  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Droid+Sans' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" type="text/css" href="css/project-server.css">
+
+	  	<!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Droid+Sans' rel='stylesheet' type='text/css'> -->
+	  	 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  	<link rel="stylesheet" type="text/css" href="css/project-server.css">
+
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+     
+        <script type="text/javascript" src="js/detailStatistics.js">></script>
+        <script type="text/javascript" src="js/regression.js"></script>
+		<script type="text/javascript" src="js/highcharts.js"></script>
+
+
 	</head>
 	<body>
+
+
+	<h2  style="text-align: center; font-family: 'Open Sans'; color: #4d4d4d; font-size: 18px; font-weight: bolder; margin-top: 10px;"> Project Data </h2>
+
+
+	<div>
+		<div id="detail-container" style="min-width: 300px; max-width: 800px; min-height: 300px; margin-top: 0px;"></div>
+        <button id="detail-button">Show Projection</button>
+	</div>
 
 		<div class="content-container" id="project-data-content">
 			<div>
@@ -50,7 +69,12 @@
 			<div>
 				<h3>Budget Information</h3>
 				<div class="data">
-					Doctus necessitatibus per in, audiam molestie assentior sed cu, sea id velit vocent deseruisse. Veri luptatum his no, in his graece vidisse ancillae. Vix id invidunt democritum, suscipiantur mediocritatem his no. Nostro quaestio evertitur an nam, vis cu quaeque scribentur signiferumque. Choro deterruisset ut cum, tibique molestie mel ea. Tale tation perfecto mel ea, mea agam cetero assueverit an.
+					<ul class="no-points">
+						<li>Original Start: 3 Jun 2014</li>
+						<li>Original End: 25 Aug 2014</li>
+						<li>Original Budget: $87, 000</li>
+						<li>Current Budget: $94, 000</li>
+					</ul>
 				</div>
 			</div>
 
@@ -58,9 +82,51 @@
 			<div>
 				<h3>Actuals & Forecast</h3>
 				<div class="data">
-					Ad quo epicuri vulputate, ullum diceret nec ea. Probatus postulant accusamus in mel. Cum alii assueverit delicatissimi ex, vix mazim dolorem oportere ei. Audiam eruditi sit ad, et habemus corpora menandri qui. Qui tale exerci oblique an, et est ipsum veniam persecuti.
+					<ul class="no-points">
+						<li>Actual Start: 3 Jun 2014</li>
+						<li>Forecast End: 25 Aug 2014</li>
+						<li>Actual Cost to date: $38, 000</li>
+						<li>Cost at complete: $94, 000</li>
+						<li>Percent Complete: 44%</li>
+					</ul>
 				</div>
 			</div>
+
+			<div>
+				<h3>Project Milestones</h3>
+				<table>
+					<thead> 
+						<tr >
+						    <th>Description</th>
+							<th>Target</th>
+							<th>Trend</th>
+						</tr>
+					<thead> 
+					<tbody>
+						<tr >
+						    <td>Project Start</td>
+							<td>1 June</td>
+							<td><img src="images/red.png" width="21px" height="21px"></td>
+						</tr>
+						<tr >
+						    <td>Deployment 1</td>
+							<td>3 July</td>
+							<td><img src="images/green.png" width="21px" height="21px"></td>
+						</tr>
+						<tr >
+						    <td>UAT 1</td>
+							<td>4 July</td>
+							<td><img src="images/orange.png" width="21px" height="21px"></td>
+						</tr>
+						<tr >
+						    <td>Project Closure</td>
+							<td>30 Aug</td>
+							<td><img src="images/green.png" width="21px" height="21px"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
 		</div>
 
 	</body>

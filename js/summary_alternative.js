@@ -5,9 +5,9 @@ $(function () {
             },
             title: {
                 text: 'Summary KPI',
-                // style: {
-                //     color: '#389dd8'
-                // }
+                style: {
+                    color: '#5e5e5e'
+                }
             },
             xAxis: {
                  gridLineWidth: 0,
@@ -15,6 +15,7 @@ $(function () {
                 title: {
                     text: null
                 }
+
             },
             yAxis: {
                 min: 0,
@@ -22,6 +23,10 @@ $(function () {
                 title: {
                     text: 'Percentage of Total',
                     align: 'high'
+                },
+                labels: {
+                    
+                    enabled:false,//default is true
                 }
             },
             tooltip: {
@@ -36,6 +41,9 @@ $(function () {
                         enabled: true,
                         format: '{y}%'
                     }
+                },
+                series: {
+                    stacking: 'percent'
                 }
             },
             credits: {

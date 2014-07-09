@@ -38,7 +38,7 @@ $(function () {
             tickWidth: 0,
 	        title: {
                 y: -58,
-                style : { "color": "#333333", "fontSize": "18px" }
+                style : { "color": "#5e5e5e", "fontSize": "18px" }
 
 	        },
             labels: {
@@ -64,7 +64,10 @@ $(function () {
 	        max: 200,
 	        title: {
 	            text: 'Scope'
-	        }       
+	        },
+            style: {
+                    color: '#5e5e5e'
+            }       
 	    },
 
 	    credits: {
@@ -72,12 +75,12 @@ $(function () {
 	    },
 	
 	    series: [{
-	        name: 'Scope',
+	        //name: 'Scope',
 	        data: [100],
 	        dataLabels: {
 	        	format: '<div style="text-align:center"><span style="font-size:16px;color:' + 
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:10px;color:black">Complete issues</span></div>'
+                    ('#5e5e5e') + '">{y}</span><br/>' + 
+                   	'<span style="font-size:10px;color:#5e5e5e">Complete issues</span></div>'
 	        },
 	        tooltip: {
 	            valueSuffix: 'Completed issues'
@@ -99,12 +102,12 @@ $(function () {
 	    	enabled: false
 	    },
 	    series: [{
-	        name: 'Budget',
+	        //name: 'Budget',
 	        data: [84000],
 	        dataLabels: {
 	        	format: '<div style="text-align:center"><span style="font-size:16px;color:' + 
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:10px;color:black">CAD</span></div>'
+                   ('#5e5e5e') + '">{y}</span><br/>' + 
+                   	'<span style="font-size:10px;color:#5e5e5e">CAD</span></div>'
 	        },
 	        tooltip: {
 	            valueSuffix: '$'
@@ -131,8 +134,8 @@ $(function () {
 	        data: [10],
 	        dataLabels: {
 	        	format: '<div style="text-align:center"><span style="font-size:16px;color:' + 
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:10px;color:black">Developer Days</span></div>'
+                     ('#5e5e5e') + '">{y}</span><br/>' + 
+                   	'<span style="font-size:10px;color:5e5e5e">Developer Days</span></div>'
 	        },
 	        tooltip: {
 	            valueSuffix: 'Developer Days'

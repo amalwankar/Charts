@@ -12,18 +12,27 @@ $(function () {
         $('#budget_container').highcharts({
             title: {
                 text: 'Budget',
+                style: {
+                    color: '#5e5e5e'
+                }
             },
             xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6',
+                    'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'],
                     labels: {
                         rotation: -45,
+                        style: {
+                            color: '#5e5e5e'
+                        }
                     }
             },
             yAxis: {
                 gridLineWidth: 0.3,
                 title: {
-                    text: null
+                    text: null,
+                    style: {
+                        color: '#5e5e5e'
+                    }
                 },
                 plotLines: [{
                     value: 0,
@@ -48,9 +57,9 @@ $(function () {
                 name: 'Actual',
                 data: budgetData, 
                  type: 'area',
-                color: "#93bf52"//"#55BF3B" //green
+                color: '#ec8b3a'//"#E18A07" //Orange 
             }, {
-                name: 'Expected',
+                name: 'Projected',
                 data: yZero(budgetData),
                 type: 'line',
                 dashStyle: 'dot',
@@ -58,16 +67,20 @@ $(function () {
             }]
         });
 
-        var chart = $('#budget_container').highcharts();
+        var budgetchart = $('#budget_container').highcharts();
+        var budgetseries = budgetchart.series[1];
+        budgetseries.hide();
+        budgetseries.show();
+        budgetseries.hide();
+        budgetchart.setSize(300, 210);
                 // the button action
         $budgetButton = $('#budget-button');
         $budgetButton.click(function() {
-            var series = chart.series[1];
-            if (series.visible) {
-                series.hide();
+            if (budgetseries.visible) {
+                budgetseries.hide();
                 $budgetButton.html('Show Projection');
             } else {
-                series.show();
+                budgetseries.show();
                 $budgetButton.html('Hide Projection');
             }
         });
