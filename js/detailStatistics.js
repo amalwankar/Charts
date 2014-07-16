@@ -10,12 +10,19 @@ $(function () {
             return[[data.length-1, data[data.length-1]], [maxValue, +(fitObj.slope*maxValue + fitObj.intercept).toFixed(2)]];
         }
 
+
+        function  enableOrDisableToolTip(){
+
+            if(window.innerWidth > window.innerHeight) return true; //disable tooltip for portrait mode
+            return false;
+        }
+
         $('#detail-container').highcharts({
             // chart: {
             //     type: 'area'
             // },
             title: {
-                text: 'Burndown & Budget',
+                text: 'Burn Down & Costs',
                 style: {
                     color: '#5e5e5e',
                     fontSize: "16px"
@@ -26,7 +33,7 @@ $(function () {
                 title: {
                     text: "Week"
                 },
-                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                categories: ["Jul 4", "Jul 11", "Jul 18", "Jul 25", "Aug 1", "Aug 8", "Aug 15", "Aug 22", "Aug 29", "Sep 5", "Sep 12", "Sep 19"],
                 labels: {
                     rotation: -45,
                     style: {
@@ -41,7 +48,7 @@ $(function () {
             yAxis: [{ // Primary yAxis
                 gridLineWidth: 0.1,
                 labels: {
-                    format: '{value} tasks',
+                    format: '{value} hours',
                     style: {
                         color: '#5e5e5e'
                     }
@@ -71,7 +78,7 @@ $(function () {
                 opposite: true
             }],
             tooltip: {
-                shared: true
+                enabled: enableOrDisableToolTip()
             },
             legend: {
                 // layout: 'horizontal',
@@ -84,12 +91,12 @@ $(function () {
                 enabled: false
             },
             series: [{
-                name: 'Tasks',
+                name: 'Efforts in hours',
                 type: 'area',
                 yAxis: 1,
                 data: burndownData,
                 tooltip: {
-                    valueSuffix: ' tasks'
+                    valueSuffix: ' hours'
                 },
                 color:  "#55aded"//"#55BF3B" //green
     
@@ -145,4 +152,36 @@ var chart = $('#detail-container').highcharts();
                 $budgetButton.html('Hide Projection');
             }
         });
+
+        if(window.orientation === 0){
+             $budgetButton.hide();
+        }
+
+
+        jQuery(window).bind('orientationchange', function(e) {
+
+          switch ( window.orientation ) {
+
+            case 0:
+                $budgetButton.hide();
+                chart.tooltip.enabled = false;
+            break;
+
+            case 90:
+                 $budgetButton.show();
+                 chart.tooltip.enabled = true;
+            break;
+
+            case -90:
+                $budgetButton.show();
+                chart.tooltip.enabled = true;
+            break;
+
+          }
+
+        });
+
     });
+    
+
+

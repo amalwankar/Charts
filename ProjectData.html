@@ -4,6 +4,7 @@
 
 	  	<!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Droid+Sans' rel='stylesheet' type='text/css'> -->
 	  	 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.1.0/css/font-awesome.css">
 	  	<link rel="stylesheet" type="text/css" href="css/project-server.css">
 
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
@@ -14,10 +15,10 @@
 
 
 	</head>
-	<body>
+	<body onorientationchange="updateOrientation();">
 
 
-	<h2  style="text-align: center; font-family: 'Open Sans'; color: #4d4d4d; font-size: 18px; font-weight: bolder; margin-top: 10px;"> Project Data </h2>
+	<h2 class="page-headers"> Project Data </h2>
 
 
 	<div>
@@ -26,49 +27,10 @@
 	</div>
 
 		<div class="content-container" id="project-data-content">
-			<div>
-				<h3>Completed this Period</h3>
-				<div class="data">
-					<ul>
-						<li>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-						</li>
-						<li>
-							Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
-						</li>
-						<li>
-							Doctus necessitatibus per in, audiam molestie assentior sed cu
-						</li>
-						<li>
-							Ad quo epicuri vulputate, ullum diceret nec ea
-						</li>
-					</ul> 
-				</div>
-			</div>
-
-			<div>
-				<h3>Planned next Period</h3>
-				<div class="data">
-					<ul>
-						<li>
-							Cum alii assueverit delicatissimi ex, vix mazim 
-						</li>
-						<li>
-							Vix id invidunt democritum, suscipiantur mediocritatem his no
-						</li>
-						<li>
-							Audiam eruditi sit ad, et habemus corpora menandri qui
-						</li>
-						<li>
-							Veri luptatum his no, in his graece vidisse ancillae
-						</li>
-					</ul> 
-				</div>
-			</div>
 
 			<div>
 				<h3>Budget Information</h3>
-				<div class="data">
+				<div class="data fullwidth">
 					<ul class="no-points">
 						<li>Original Start: 3 Jun 2014</li>
 						<li>Original End: 25 Aug 2014</li>
@@ -81,7 +43,7 @@
 
 			<div>
 				<h3>Actuals & Forecast</h3>
-				<div class="data">
+				<div class="data fullwidth">
 					<ul class="no-points">
 						<li>Actual Start: 3 Jun 2014</li>
 						<li>Forecast End: 25 Aug 2014</li>
@@ -94,37 +56,43 @@
 
 			<div>
 				<h3>Project Milestones</h3>
-				<table>
-					<thead> 
-						<tr >
-						    <th>Description</th>
-							<th>Target</th>
-							<th>Trend</th>
-						</tr>
-					<thead> 
-					<tbody>
-						<tr >
-						    <td>Project Start</td>
-							<td>1 June</td>
-							<td><img src="images/red.png" width="21px" height="21px"></td>
-						</tr>
-						<tr >
-						    <td>Deployment 1</td>
-							<td>3 July</td>
-							<td><img src="images/green.png" width="21px" height="21px"></td>
-						</tr>
-						<tr >
-						    <td>UAT 1</td>
-							<td>4 July</td>
-							<td><img src="images/orange.png" width="21px" height="21px"></td>
-						</tr>
-						<tr >
-						    <td>Project Closure</td>
-							<td>30 Aug</td>
-							<td><img src="images/green.png" width="21px" height="21px"></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="project-milestone">
+					<i class="fa fa-check-circle" style="color: #93bf52"></i> 
+					<div class="milestone-detail">
+						<span class="milestone-name">Project Kickoff</span>
+						<br>
+						<span>June 1, 2014</span>
+					</div>
+				</div>
+
+				<div class="project-milestone">
+					<i class="fa fa-arrow-circle-up" style="color: #93bf52"></i> 
+					<div class="milestone-detail">
+						<span class="milestone-name">Deployment 1</span>
+						<br>
+						<span>July 3, 2014</span>
+					</div>
+				</div>
+
+				<div class="project-milestone">
+					<i class="fa fa-arrow-circle-down" style="color: #e34e33"></i> 
+					<div class="milestone-detail">
+						<span class="milestone-name">UAT</span>
+						<br>
+						<span>July 4, 2014</span>
+					</div>
+				</div>
+
+
+				<div class="project-milestone">
+					<i class="fa fa-minus-circle" style="color: #ec8b3a"></i> 
+					<div class="milestone-detail">
+						<span class="milestone-name">Project Closure</span>
+						<br>
+						<span>August 30, 2014</span>
+					</div>
+				</div>
+
 			</div>
 
 		</div>

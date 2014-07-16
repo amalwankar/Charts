@@ -1,97 +1,250 @@
 <html>
 
-	<head>
-	  <!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Droid+Sans' rel='stylesheet' type='text/css'> -->
-	   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" type="text/css" href="css/project-server.css">
-	</head>
-	<body>
+<head>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Droid+Sans' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project-server.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/projectDetail.js"></script>
+</head>
+<body>
 
-		<h2  style="text-align: center; font-family: 'Open Sans'; color: #4d4d4d; font-size: 18px; font-weight: bolder; margin-top: 10px; margin-bottom: 10px;"> Project Details </h2>
-		<div class="content-container" id="details-container">
+	<h2  class="page-headers"> Project Details </h2>
+	<div class="content-container" id="details-container">
 
-			<div>
-				<h3>Project Issues</h3>
-				<table class="shrink-table">
-					<thead> 
-						<tr >
-							<th>Status</th>
-						    <th>Desc.</th>
-							<th>Impact</th>
-							<th>Action</th>
-						</tr>
-					<thead> 
-					<tbody>
-						<tr >
-							<td></td>
-						    <td>Issue #1</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr >
-							<td></td>
-						    <td>Issue #2</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr >
-						    <td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
+		<div>
+			<h3>Project Issues</h3>
+			<div class="issue">
+				<div class="brief-issue" style="border-color: #e34e33">Defect found in login screen
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Open
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							When viewing the tool in IE9, some of the text is cutt off in some cases. This is reproducible on some machines but not on the others. It might be a service pack issue. 
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							Medium
+						</div> 
+
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+							Investigating
+						</div> 
+					</div>
+				</div>
 			</div>
+			<div class="issue">
+				<div class="brief-issue">IE9 issue at high resolution
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Open
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							Content does not look good at high resolution. 
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							Low
+						</div> 
+
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+
+						</div> 
+					</div>
+				</div>
+			</div>
+
+			<div class="issue">
+				<div class="brief-issue" style="border-color: darkgray">Help section has a mispelt word in the welcome text
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Closed
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							Help section had mispelled word. 
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							Low
+						</div> 
+
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+							Corrected the spelling.
+						</div> 
+					</div>
+				</div>
+			</div>
+
 
 			<div>
 				<h3>Current Risks</h3>
-				<table class="shrink-table">
-					<thead> 
-						<tr >
-							<th>Status</th>
-						    <th>Desc.</th>
-							<th>Impact</th>
-							<th>Action</th>
-						</tr>
-					<thead> 
-					<tbody>
-						<tr >
-							<td></td>
-						    <td>Risk #1</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr >
-							<td></td>
-						    <td>Risk #2</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr >
-						    <td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+							<div class="issue">
+				<div class="brief-issue" style="border-color: #e34e33">Response time from iTracker vendor support
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Open
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							Extremely slow response time from iTracker vendor support
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							High
+						</div> 
 
-			<div>
-				<h3>Project Description</h3>
-				<div class="data">
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. 
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+							Investigating
+						</div> 
+					</div>
+				</div>
+			</div>
+			<div class="issue">
+				<div class="brief-issue">Mark's allocation going to 50% in July
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Open
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							Resource Mark's allocation has dropped to 50% in month of July.
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							Medium 
+						</div> 
+
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+							Investigating as new resource to be determined. 
+						</div> 
+					</div>
 				</div>
 			</div>
 
-			<div>
-				<h3>Project Goal</h3>
-				<div class="data">
-					Ad quo epicuri vulputate, ullum diceret nec ea. Probatus postulant accusamus in mel. Cum alii assueverit delicatissimi ex, vix mazim dolorem oportere ei. Audiam eruditi sit ad, et habemus corpora menandri qui. Qui tale exerci oblique an, et est ipsum veniam persecuti.
+			<div class="issue">
+				<div class="brief-issue">Difficulty obtaining sample group for user testing
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Open
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							Need to more sample group to perform useability test for the application
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							Low
+						</div> 
+
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+							Arranged useability test to alleviate the issue
+						</div> 
+					</div>
 				</div>
 			</div>
-		</div>
 
-	</body>
-</html>
+			<div class="issue">
+				<div class="brief-issue" style="border-color: darkgray">Awaiting feedback from the client on mockups
+					<a class="show-hide">&#9650;</a>
+				</div>
+				<div class="issue-detail">
+					<div>
+						<h4>Status</h4>
+						<div class="issue-detail-content">
+							Closed
+						</div> 
+					</div>
+					<div>
+						<h4>Description</h4>
+						<div class="issue-detail-content">
+							Waiting on the feedback from client on the proposed design changes.  
+						</div> 
+					</div>
+					<div>
+						<h4>Impact</h4>
+						<div class="issue-detail-content">
+							Medium
+						</div> 
+
+					</div>
+					<div>
+						<h4>Action</h4>
+						<div class="issue-detail-content">
+							Feedback received.
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</body>
+		</html>

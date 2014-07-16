@@ -4,7 +4,7 @@
 	font-family: 'Open Sans';
     color: #5e5e5e;
     opacity: 0.90;
-    margin: -10px 10px 0px 10px;
+    margin: -10px 5px 0px 5px;
 }
 
 .data{
@@ -71,6 +71,12 @@ table tr:nth-child(even) td{
 .no-points {
 	list-style-type: none;
     margin-left: 0px;
+}
+
+#summary-container  {
+margin: 10px 5px 0px 5px; 
+padding: 0px 5px 0px 5px; 
+min-width = 300px
 }
 
 #details-container h3 {
@@ -161,3 +167,171 @@ h2{
     margin-top: 0px;
     padding-top: 0px;
 }
+
+.fullwidth {
+    width: 100%;
+}
+
+
+.brief-issue {
+    margin-bottom: 5px;
+    background-color: lightgray;
+    padding: 5px;
+    border: solid;
+    border-width: 0px 0px 0px 10px;
+    border-color: #ec8b3a;
+    margin-bottom: 2px;
+    color: #5e5e5e;
+     font-size; 16px;
+}
+.issue-detail {
+    background-color: #eaeaea;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: #5e5e5e;
+}
+.show-hide {
+    float: right;
+}
+
+h4 {
+    margin: 10px 0px 5px 0px;
+    font-size; 16px;
+}
+
+/* unvisited link */
+a:link {
+    color: #389dd8;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #44a99d;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+.issue-detail-content{
+    margin-left: 0px;
+    font-size: 14px;
+}
+
+
+.page-headers {
+     
+     text-align: center; 
+     font-family: 'Open Sans'; 
+     color: #4d4d4d; 
+     font-size: 18px; 
+     font-weight: bolder; 
+     margin-top: 10px; 
+     margin-bottom: 10px;
+}
+
+.contact-name {
+    margin-bottom: 5px;
+    background-color: lightgray;
+    padding: 5px;
+    margin-bottom: 2px;
+    color: #5e5e5e; 
+    font-size: 14px;
+}
+
+.contact-name .show-hide {
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+.fi-torso-business {
+    font-size: 36px;
+    float: left;
+    margin-right: 15px;
+}
+
+.fi-mail{
+
+    font-size: 36px;
+    padding-right: 15px;
+
+    margin-right: 15px;
+}
+
+.fi-telephone, .foundicon-chat{
+    font-size: 36px;
+    margin-right: 15px;
+}
+
+
+.email-address {
+    font-size: 14px;
+    vertical-align: 45%;
+    margin-left: 10px;
+}
+
+.phone-number{
+    font-size: 14px;
+    vertical-align: 45%;
+    margin-left: 10px;
+}
+
+.chat-status {
+    font-size: 16px;
+    vertical-align: 45%;
+    margin-left: 10px;
+    color: green;
+}
+
+.contact-position-and-email{
+    width: 100%;
+
+}
+
+.contact-position-and-email .show-hide {
+    font-size: 14px;
+}
+
+.contact-detail {
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: #5e5e5e;
+}
+
+.contact-detail-content{
+    margin-left: 0px;
+    font-size: 16px;
+}
+
+.project-milestone {
+    margin-bottom: 5px;
+    background-color:  #eaeaea;
+    padding: 5px;
+    margin-bottom: 2px;
+    color: #5e5e5e; 
+    font-size: 14px;
+}
+
+.project-milestone {
+    content: '0xe800';
+}
+
+.fa-check-circle, .fa-circle, .fa-arrow-circle-up, .fa-arrow-circle-down, .fa-minus-circle{
+    font-size: 36px;
+    margin-right: 15px;
+    float: left;
+}
+
+.milestone-name{
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
