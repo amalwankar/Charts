@@ -204,20 +204,6 @@ a:link {
     color: #389dd8;
 }
 
-/* visited link */
-a:visited {
-    color: #00FF00;
-}
-
-/* mouse over link */
-a:hover {
-    color: #44a99d;
-}
-
-/* selected link */
-a:active {
-    color: #0000FF;
-}
 
 .issue-detail-content{
     margin-left: 0px;
@@ -326,7 +312,14 @@ a:active {
 .fa-check-circle, .fa-circle, .fa-arrow-circle-up, .fa-arrow-circle-down, .fa-minus-circle{
     font-size: 36px;
     margin-right: 15px;
+}
+
+.fa-check-circle {
     float: left;
+}
+
+.fa-circle, .fa-arrow-circle-up, .fa-arrow-circle-down, .fa-minus-circle{
+    float: right;
 }
 
 .milestone-name{
@@ -335,3 +328,10 @@ a:active {
     margin-bottom: 10px;
 }
 
+.project-milestone span{
+    margin-left: 46px;
+}
+
+.complete span{
+    margin-left: 0px;
+}

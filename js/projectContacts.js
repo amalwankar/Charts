@@ -6,11 +6,11 @@ $(document).ready(function () {
 
         $(this).next().slideToggle();
 
-        if ($(this).children('.contact-position-and-email').children('.show-hide').text().trim().charCodeAt(0) === 9650) {
+        if ($(this).children('.contact-position-and-email').children('.show-hide').text().trim().charCodeAt(0) === 9660) {
 
-            $(this).children('.contact-position-and-email').children('.show-hide').html('&#9660;');
+            $(this).children('.contact-position-and-email').children('.show-hide').html('&#9650;');
         } else {
-           $(this).children('.contact-position-and-email').children('.show-hide').html('&#9650;');
+           $(this).children('.contact-position-and-email').children('.show-hide').html('&#9660;');
         }
     });
 });
